@@ -42,7 +42,7 @@ Router app = Router(
 
 //foodio related
   ..get('/health', (Request request) {
-    return Response.ok('i am good, v1.5');
+    return Response.ok('i am good, v1.6');
   })
 
   ..get('/result/<storeId>', (Request request, String storeId)  async {
