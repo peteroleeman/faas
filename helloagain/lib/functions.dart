@@ -2,14 +2,14 @@
 import 'package:firedart/firestore/firestore.dart';
 import 'package:firedart/firestore/models.dart';
 import 'package:functions_framework/functions_framework.dart';
-import 'package:helloworld/constant.dart';
-import 'package:helloworld/model/order_model.dart';
-import 'package:helloworld/model/store_model.dart';
-import 'package:helloworld/model/summary_day_model.dart';
-import 'package:helloworld/model/summary_hour_model.dart';
-import 'package:helloworld/model/summary_model.dart';
-import 'package:helloworld/model/zreport_model.dart';
-import 'package:helloworld/util_datetime.dart';
+import 'package:helloagain/constant.dart';
+import 'package:helloagain/model/order_model.dart';
+import 'package:helloagain/model/store_model.dart';
+import 'package:helloagain/model/summary_day_model.dart';
+import 'package:helloagain/model/summary_hour_model.dart';
+import 'package:helloagain/model/summary_model.dart';
+import 'package:helloagain/model/zreport_model.dart';
+import 'package:helloagain/util_datetime.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
 
@@ -910,12 +910,13 @@ Future<String> clearPlus(String storeId, String summaryId) async
 
   for(var orderModel in orderList)
   {
-    storeRef
-          .collection("summary")
-          .document(summaryId)
-          .collection("orders")
-          .document(orderModel.id)
-          .set(orderModel.toMap());
+    // storeRef
+    //       .doc(orderModel.storeId)
+    //       .collection("summary")
+    //       .doc(summaryId)
+    //       .collection("orders")
+    //       .doc(orderModel.id)
+    //       .set(orderModel.toMap()!);
   }
 
   
